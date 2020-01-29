@@ -1,0 +1,34 @@
+﻿<Window x:Class="zakazivanje.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:zakazivanje"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+        <TabControl >
+            <TabItem Header="Klijenti" FontSize="42">
+            <DockPanel>
+                <TextBox  DockPanel.Dock="Top" Text="{Binding Pretraga, UpdateSourceTrigger=PropertyChanged}" FontSize="42"/>
+                <StackPanel DockPanel.Dock="right">
+                    <Button Content="Dodaj" Name="dodavanje" Click="dodavanje_Click" FontSize="42"/>
+                    <Button Content="Izmeni" Name="izmena" FontSize="42" Click="izmena_Click"/>
+                    <Button Content="Obrisi" Name="brisanje" FontSize="42" Click="brisanje_Click"/>
+                </StackPanel>
+                <DataGrid Name="dgKlijenti" FontSize="42" ColumnWidth="*" IsReadOnly="True"/>
+            </DockPanel>
+        </TabItem>
+	<TabItem Header="Tretman" FontSize="42">
+            <DockPanel>
+                <TextBox  DockPanel.Dock="Top" Text="{Binding PretragaTretmani, UpdateSourceTrigger=PropertyChanged}" FontSize="42"/>
+                <StackPanel DockPanel.Dock="right">
+                    <Button Content="Dodaj" Name="dodavanje_tretmana" Click="dodavanje_tretmana_Click"  FontSize="42"/>
+                    <Button Content="Izmeni" Name="izmena_tretmana" Click="izmena_tretmana_Click" FontSize="42" />
+                    <Button Content="Obrisi" Name="brisanje_tretmana" FontSize="42" Click="brisanje_tretmana_Click"/>
+                </StackPanel>
+                <DataGrid Name="dgTretmani" FontSize="42" ColumnWidth="*" IsReadOnly="True"/>
+            </DockPanel>
+	</TabItem>
+        </TabControl>
+ 
+</Window>
